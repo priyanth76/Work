@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-xs-12">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+                <a class="navbar-brand" href="#">Welcome {{loggingService.userObject?.Name}}
+                  {{loggingService.userObject?.CompanyName}}
+                </a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+              <li *ngIf="!loggingService.isLogedin" routerLinkActive="active"><a routerLink="/login">Login</a></li>
+              <li *ngIf="loggingService.isLogedin" 
+              routerLinkActive="active"
+              (click)="onLogout()"><a style="cursor:pointer">Logout</a></li>            
+          </ul>          
+        </div>
+      </nav>
+    </div>
+  </div>
+    
+  
+    
+  

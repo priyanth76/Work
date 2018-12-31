@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-xs-12">
+      <form (ngSubmit)="onAddUser()" #f="ngForm" >
+        <div class="form-group">
+          <label>User Name</label>
+          <input type="text" class="form-control" 
+          name="name" 
+          [(ngModel)]="user.Name" 
+          required                     
+          #name="ngModel">
+          <span calss="help-block" *ngIf="!name.valid && name.touched">Name is Required</span>          
+        </div>
+
+
+        <div class="form-group">
+          <label>State Name:</label>
+          <select class="form-control" [(ngModel)]="user.State"  required name="state" id="state" #statename="ngModel">
+            <option *ngFor="let array of info" [value]="array.Name"  >{{array.Name}}</option>
+          </select>
+          <!-- <input list="state" class="form-control" 
+          name="statename" 
+          ngModel
+          required
+          #statename="ngModel"> 
+         
+          <datalist id="state">
+            <option *ngFor="let array of info" value="{{array.Name}}">            
+          </datalist>  -->
+          <span class="help-block" *ngIf="!statename.valid && statename.touched">State is Required</span>            
+        </div>          
+        
+        <div>
+            <label>Gender:</label>
+            <label class="radio-inline">
+                <input id="gender" type="radio" name="gender"  [(ngModel)]="user.Gender"  value="male">Male
+              </label>
+              <label class="radio-inline">
+                <input  id="gender" type="radio" name="gender"  [(ngModel)]="user.Gender" value="female">Female
+              </label>
+              <span calss="help-block" *ngIf="!user.Gender && showError">Gender is Required</span>                        
+        </div>
+        <div>
+          <label>Hobbies:</label>
+            <label class="checkbox-inline">
+                <input type="checkbox" name="Music"    [checked]="checkValue('Music')"  value="Music" (change)="toggleValue('Music')"> Music
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="Cricket"   [checked]="checkValue('Cricket')"   value="Cricket" (change)="toggleValue('Cricket')">Cricket
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="Readingbooks" [checked]="checkValue('Readingbooks')"   value="Readingbooks" (change)="toggleValue('Readingbooks')">Reading Books
+              </label>
+              <label class="checkbox-inline">
+                <input type="checkbox" name="Swimming"    [checked]="checkValue('Swimming')"   value="Swimming" (change)="toggleValue('Swimming')">Swimming
+              </label>
+        </div>                  
+        <button class="btn btn-primary" type="submit"
+        [disabled]="!f.valid">ADD User</button>          
+      </form>
+  </div>
+</div>

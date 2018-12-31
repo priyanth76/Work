@@ -1,0 +1,39 @@
+<!-- <div *ngFor="let array of info">
+  <div class="row">
+    <div class="col-xs-6">
+        <p>Id :  {{array.Id}}</p>
+    </div>
+    <div class="col-xs-6">
+        <p>Name :  {{array.Name}}</p>
+    </div>
+  </div>  
+</div> -->
+
+
+  <!-- <table class="table-striped">
+    <div *ngFor="let array of info">    
+      <tr>
+        <td><p>Id :  {{array.Id}}</p></td>
+        <td><p>Name :  {{array.Name}}</p></td>
+      </tr>
+    </div>
+  </table> -->
+
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th> 
+          <th>Action</th>                  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let array of info;let i = index">
+          <td><p> {{array.Id}}</p></td>
+          <td><p> {{array.Name}}</p></td>
+          <td><button class="btn btn-primary" (click)="onDelete(i)">Delete</button></td>          
+        </tr>      
+      </tbody>
+    </table>
+
+

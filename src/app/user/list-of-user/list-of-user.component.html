@@ -1,0 +1,35 @@
+<!-- <select name="gender" id="gender" [(ngModel)]="Gender">
+  <option *ngFor="let row of GenderList" [value]="row.Id">{{row.displayName}}</option>
+ 
+</select>
+
+<form (ngSubmit)="submit(f)" #f="ngForm" class=" mt-1">
+    <div class="form-group">
+        <label class="control-label" for="">User Form</label>
+    
+    </div>
+  <input name="username" class="form-control" type="text" ngModel  placeholder="username">
+  <button type="submit">Submit</button>
+
+</form> -->
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>State</th> 
+      <th>Gender</th>
+      <th>Hobbies</th>                   
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let array of user;let i = index">
+      <td><p> {{array.Name}}</p></td>
+      <td><p> {{array.State}}</p></td>
+      <td><p> {{array.Gender}}</p></td>
+      <td><p> {{array.Hobby}}</p></td>
+      <td><button class="btn btn-primary" (click)="onDeleteUser(i)">Delete</button></td>          
+    </tr>      
+  </tbody>
+</table>

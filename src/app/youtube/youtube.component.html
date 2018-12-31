@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <!-- <li routerLinkActive="active"><a routerLink="/home">Home</a></li>           -->
+          <li> <a (click)="onClick(home)" style="cursor:pointer">List of State</a></li>
+          <li routerLinkActive="active"><a routerLink="./likedvideos">Add State</a></li>
+          <li routerLinkActive="active"><a routerLink="settings">Delete State</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <router-outlet></router-outlet>
+  </div>
+</div>
